@@ -140,7 +140,7 @@ ZMK_TRI_STATE(
 /* Custom behaviors */
 
 // Alt+Tab swapper, requires tri-state module.
-ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
               ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
 
 // Define mod-morph with a *single* mod trigger for less repetition.
@@ -189,6 +189,8 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
+#define BROW_NEXT &kp LG(LA(RIGHT))
+#define BROW_PREV &kp LG(LA(LEFT))
 
 /* Keymap */
 
@@ -207,7 +209,7 @@ ZMK_BASE_LAYER(Base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     ___           &kp Z         &kp X         &kp C         &kp D         &kp V       ,   &kp K         &kp H         &comma_morph  &dot_morph    &qexcl        ___         ,
 //╰─────────────┼─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────┼─────────────╯
-                                              ___          &kp BSPC       SMART_NUM   ,   &lt FN RET   &lt_spc NAV 0  MAGIC_SHIFT
+                                              ___           &kp BSPC      SMART_NUM   ,   &lt FN RET   &lt_spc NAV 0  MAGIC_SHIFT
 //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -217,7 +219,7 @@ ZMK_BASE_LAYER(Nav,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      ___           &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp RET     ,   &sk LSHFT     &sk LGUI      &sk LALT      &sk LCTRL     ___           ___         ,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     ___           &kp INS       &kp TAB       ___           ___           ___         ,   ___           ___           ___           ___           ___           ___         ,
+     ___           &kp INS       &kp TAB       ___           BROW_PREV     BROW_NEXT   ,   ___           ___           ___           ___           ___           ___         ,
 // ╰─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┼─────────────╯
                                                ___           CANCEL        ___         ,  ___            ___          ___
 //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
