@@ -1,16 +1,24 @@
-# urob's zmk-config
+# zmk-config (macOS fork)
 
-This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
-configuration. It consists of a 34-keys base layout that is re-used for various
-boards, including my Corneish Zen and my Planck.
+This is a personal fork of [urob's zmk-config](https://github.com/urob/zmk-config),
+customized for macOS with a 36-key Corne layout.
 
-My configuration currently builds against `v0.3` of upstream ZMK.
-Custom functionality is added through various
+Based on [ZMK firmware](https://github.com/zmkfirmware/zmk/) `v0.3` with
+custom functionality added through various
 [ZMK modules](https://github.com/search?q=topic%3Azmk-module+fork%3Atrue+owner%3Aurob+&type=repositories).
-The state of the entire firmware is pinned in my `west`
-[manifest](https://github.com/urob/zmk-config/blob/main/config/west.yml).
 
 ## Highlights
+
+### Differences from upstream
+
+- **36-key layout** - Retains outer columns for additional keys vs upstream's 34-key layout
+- **macOS-optimized shortcuts** - Word deletion with Option+Delete/Backspace (instead of Ctrl)
+- **macOS window/browser navigation** - Custom shortcuts for browser tab switching and window management
+- **Alternative homerow mod order** - LCTRL/LALT/LGUI/LSHFT (optimized for macOS modifier usage)
+- **CMD-based Alt+Tab** - Uses CMD (LGUI) instead of ALT for window switching on macOS
+- **Custom thumb cluster layout** - Different arrangement optimized for personal workflow
+
+### Core features (from upstream)
 
 - ["Timeless" homerow mods](#timeless-homerow-mods)
 - Combos instead of symbol layer
