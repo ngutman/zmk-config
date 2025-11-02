@@ -41,6 +41,10 @@
   quick-tap-ms = <QUICK_TAP_MS>;
 };
 
+// Custom layer-tap for NAV/BSPC with hold-preferred for same-hand fast combos.
+ZMK_HOLD_TAP(lt_nav_bspc, bindings = <&mo>, <&kp>; flavor = "hold-preferred";
+             tapping-term-ms = <150>; quick-tap-ms = <QUICK_TAP_MS>;)
+
 /* Homerow mods */
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
@@ -209,7 +213,7 @@ ZMK_BASE_LAYER(Base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     ___           &kp Z         &kp X         &kp C         &kp D         &kp V       ,   &kp K         &kp H         &comma_morph  &dot_morph    &qexcl        ___         ,
 //╰─────────────┼─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────┼─────────────╯
-                                              ___           &lt NAV BSPC  SMART_NUM   ,   &lt FN RET   &lt_spc NAV 0  MAGIC_SHIFT
+                                              ___           &lt_nav_bspc NAV BSPC  SMART_NUM   ,   &lt FN RET   &lt_spc NAV 0  MAGIC_SHIFT
 //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 

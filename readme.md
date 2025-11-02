@@ -17,6 +17,7 @@ custom functionality added through various
 - **Alternative homerow mod order** - LCTRL/LALT/LGUI/LSHFT (optimized for macOS modifier usage)
 - **CMD-based Alt+Tab** - Uses CMD (LGUI) instead of ALT for window switching on macOS
 - **Custom thumb cluster layout** - Different arrangement optimized for personal workflow
+- **Hold-preferred NAV/BSPC layer-tap** - Uses `hold-preferred` flavor with 150ms tapping-term (vs upstream's `balanced` 200ms) for faster same-hand layer activation, enabling quick NAV+P window switching combos
 
 ### Core features (from upstream)
 
