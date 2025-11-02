@@ -13,6 +13,7 @@ custom functionality added through various
 
 - **36-key layout** - Retains outer columns for additional keys vs upstream's 34-key layout
 - **macOS-optimized shortcuts** - Word deletion with Option+Delete/Backspace (instead of Ctrl)
+- **macOS navigation cluster** - Uses CMD+arrows for line/document navigation (vs upstream's HOME/END/CTRL+HOME/END keys which don't work properly on macOS)
 - **macOS window/browser navigation** - Custom shortcuts for browser tab switching and window management
 - **Alternative homerow mod order** - LCTRL/LALT/LGUI/LSHFT (optimized for macOS modifier usage)
 - **CMD-based Alt+Tab** - Uses CMD (LGUI) instead of ALT for window switching on macOS
