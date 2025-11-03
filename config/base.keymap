@@ -42,8 +42,9 @@
 };
 
 // Custom layer-tap for NAV/BSPC with hold-preferred for same-hand fast combos.
-ZMK_HOLD_TAP(lt_nav_bspc, bindings = <&mo>, <&kp>; flavor = "hold-preferred";
+ZMK_HOLD_TAP(lt_nav_bspc_ht, bindings = <&mo>, <&kp>; flavor = "hold-preferred";
              tapping-term-ms = <150>; quick-tap-ms = <QUICK_TAP_MS>;)
+#define lt_nav_bspc &lt_nav_bspc_ht NAV BSPC
 
 /* Homerow mods */
 
@@ -156,8 +157,11 @@ SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 // Tap: space | Shift + tap: dot -> space -> sticky shift | Hold: nav layer.
-ZMK_HOLD_TAP(lt_spc, bindings = <&mo>, <&spc_morph>; flavor = "balanced";
+ZMK_HOLD_TAP(lt_spc_ht, bindings = <&mo>, <&spc_morph>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+
+#define lt_spc &lt_spc_ht NAV SPACE
+
 SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
 ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
           tap-ms = <5>;)
@@ -203,7 +207,7 @@ ZMK_BASE_LAYER(Base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     ___           &kp Z         &kp X         &kp C         &kp D         &kp V       ,   &kp K         &kp H         &comma_morph  &dot_morph    &qexcl        ___         ,
 //╰─────────────┼─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────┼─────────────╯
-                                              ___           &lt_nav_bspc NAV BSPC  SMART_NUM   ,   &lt FN RET   &lt_spc NAV 0  MAGIC_SHIFT
+                                              SMART_NUM     lt_nav_bspc   MAGIC_SHIFT ,   &lt FN RET    lt_spc        ___
 //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
