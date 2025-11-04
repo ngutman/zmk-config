@@ -159,7 +159,6 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 // Tap: space | Shift + tap: dot -> space -> sticky shift | Hold: nav layer.
 ZMK_HOLD_TAP(lt_spc_ht, bindings = <&mo>, <&spc_morph>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-
 #define lt_spc &lt_spc_ht NAV SPACE
 
 SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
@@ -185,8 +184,8 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
-#define BROW_NEXT &kp LG(LA(RIGHT))
-#define BROW_PREV &kp LG(LA(LEFT))
+#define BROW_NEXT &kp LC(TAB)
+#define BROW_PREV &kp LC(LS(TAB))
 #define BROW_WNEXT &kp LG(TILD)
 #define BROW_WPREV &kp LG(LS(TILD))
 
@@ -213,9 +212,9 @@ ZMK_BASE_LAYER(Base,
 
 ZMK_BASE_LAYER(Nav,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     ___           ___           ___           &kp LS(TAB)  &swapper       ___         ,   &kp PG_UP      NAV_BSPC      NAV_UP        NAV_DEL      ___           ___         ,
+     ___           ___           BROW_WPREV    &kp LS(TAB)  &swapper       BROW_WNEXT  ,   &kp PG_UP      NAV_BSPC      NAV_UP        NAV_DEL      ___           ___         ,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     ___           ___           ___           BROW_WPREV   BROW_WNEXT     ___         ,   &kp PG_DN      NAV_LEFT      NAV_DOWN      NAV_RIGHT    &kp RET       ___         ,
+     ___           &kp LCTRL     &kp LALT     &kp LGUI      &kp LSHFT     ___          ,   &kp PG_DN      NAV_LEFT      NAV_DOWN      NAV_RIGHT    &kp RET       ___         ,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      ___           ___           ___           BROW_PREV    BROW_NEXT      ___         ,   &kp INS        &kp TAB       ___           ___          ___           ___         ,
 // ╰─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┼─────────────╯
